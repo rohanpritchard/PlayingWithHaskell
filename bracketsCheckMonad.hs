@@ -5,6 +5,14 @@ import Control.Applicative
 -- my own defined 'Validity' datatype, but that would be
 -- boring.
 
+main = do
+ putStrLn "Welcome to BracketsCheck, please input string: "
+ string <- getLine
+ let result = checkBrackets string
+ if result
+	 then putStrLn "Your string has valid brackets."
+	 else putStrLn "Your string has invalid brackets."
+
 checkBrackets :: String -> Bool
 checkBrackets s 
  = foldl (\x y -> x >>= bCount y) (Valid 0) s == Valid 0
