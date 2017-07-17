@@ -9,9 +9,7 @@ main = do
  putStrLn "Welcome to BracketsCheck, please input string: "
  string <- getLine
  let result = checkBrackets string
- if result
-	 then putStrLn "Your string has valid brackets."
-	 else putStrLn "Your string has invalid brackets."
+ putStrLn $ "Your string has " ++ (if result then "valid" else "invalid") ++ " brackets."
 
 checkBrackets :: String -> Bool
 checkBrackets s 
